@@ -4,6 +4,8 @@
 
 ### GraphQL请求示例
 
+#### 仓库相关信息
+
 ```
 {
   repository(owner:"lsqy", name:"taro-music") {
