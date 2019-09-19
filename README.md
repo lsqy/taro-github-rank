@@ -7,7 +7,7 @@
 #### 仓库相关信息
 
 ```
-{
+query {
   repository(owner:"lsqy", name:"taro-music") {
     forkCount,
     description,
@@ -15,6 +15,23 @@
     stargazers {
       totalCount
     }
+  }
+}
+
+```
+
+#### 用户相关信息
+
+```
+query {
+  user(login:"lsqy") {
+    name,
+    avatarUrl,
+    login,
+    location,
+    id,
+    company,
+    bio
   }
 }
 
