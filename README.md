@@ -39,17 +39,83 @@ query {
 
 #### 用户相关信息
 
+> 逐步将所有可以请求到的信息显示出来
+
 ```
 query {
-  user(login:"lsqy") {
-    name,
-    avatarUrl,
-    login,
-    location,
-    id,
-    company,
-    bio
-  }
+   user(login: "lsqy") {
+      name,
+      websiteUrl,
+    	location,
+      isHireable,
+    	location,
+      createdAt,
+      databaseId,
+      email,
+      organization(login: "NervJS") {
+      	name,
+      	location
+      },
+      pinnedItemsRemaining,
+      projectsResourcePath,
+      projectsUrl,
+      repository(name: "taro-music"){
+      	stargazers {
+          totalCount
+        }
+      },
+      resourcePath,
+      status {
+        message
+      },
+    	updatedAt,
+      url,
+    	viewerCanChangePinnedItems,
+      viewerCanCreateProjects,
+      viewerCanFollow,
+      viewerIsFollowing,
+      bio,
+      commitComments(first: 30) {
+      	edges {
+          cursor,
+          node {
+            body,
+            url,
+            viewerDidAuthor,
+            author {
+              avatarUrl,
+              login,
+              resourcePath,
+              url
+            }
+          }
+        },
+      	totalCount
+    	},
+      followers(first: 10) {
+        edges{
+          cursor,
+          node {
+            login,
+            name,
+            email,
+            websiteUrl,
+            url,
+            location,
+            isHireable,
+            viewerIsFollowing,
+            bio,
+          }
+        },
+        pageInfo {
+          endCursor,
+          hasNextPage,
+          hasPreviousPage,
+          startCursor
+        },
+        totalCount
+      }
+    }
 }
 
 ```
