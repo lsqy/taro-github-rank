@@ -161,3 +161,7 @@ query {
   }
 }
 ```
+
+### 参考文章
+
+- [通过 Github V4 API 来了解 GraphQL](https://hiberabyss.github.io/2018/05/22/graphql-introduction-via-github-api/)
